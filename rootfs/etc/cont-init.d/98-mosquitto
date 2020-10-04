@@ -6,6 +6,13 @@
 
 set -e
 
+cp /etc/mosquitto/include_dir.conf /mosquitto/include_dir.conf
+
+CONFIG_FILE=/mosquitto/config/mosquitto.conf
+if [ ! -f "${CONFIG_FILE}" ]; then
+	cp /etc/mosquitto/mosquitto.conf ${CONFIG_FILE}
+fi
+
 # Set permissions
 user="$(id -u)"
 if [ "$user" = '0' ]; then

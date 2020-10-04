@@ -36,9 +36,7 @@ RUN apk add --no-cache \
     cp -f auth-plug.so /usr/share/mosquitto && \
     apk del .build-dependencies && \
     rm -fr /usr/src/mosquitto-auth-plug && \
-    mkdir -p /mosquitto/config /mosquitto/data /mosquitto/log && \
-    install -m644 /etc/mosquitto/mosquitto.conf /mosquitto/config/mosquitto.conf && \
-    install -m644 /etc/mosquitto/include_dir.conf /mosquitto/include_dir.conf
+    mkdir -p /mosquitto/config /mosquitto/data /mosquitto/log
 
 VOLUME ["/mosquitto/data", "/mosquitto/log"]
 
