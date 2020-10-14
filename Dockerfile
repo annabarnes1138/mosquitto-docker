@@ -36,9 +36,9 @@ RUN apk add --no-cache \
     cp -f auth-plug.so /usr/share/mosquitto && \
     apk del .build-dependencies && \
     rm -fr /usr/src/mosquitto-auth-plug && \
-    mkdir -p /mosquitto/config /mosquitto/data /mosquitto/log
+    mkdir -p /app/config /app/data /app/log
 
-VOLUME ["/mosquitto/data", "/mosquitto/log"]
+VOLUME ["/app/config", "/app/data", "/app/log"]
 
 EXPOSE 1883
 ENTRYPOINT ["/init"]

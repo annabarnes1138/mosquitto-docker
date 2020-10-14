@@ -7,4 +7,4 @@
 echo "Starting Mosquitto..."
 
 cd /usr/sbin
-exec mosquitto -c /mosquitto/config/mosquitto.conf
+exec mosquitto -c /app/config/mosquitto.conf
